@@ -1,5 +1,5 @@
 export async function load() {
-	let url = new URL('http://localhost:8000/pokemones/');
+	let url = new URL('https://tp2-backend-z9h1.onrender.com/pokemones/');
 	const response = await fetch(url);
 	if (!response.ok) {
 		throw new Error(`Response status: ${response.status}`);
@@ -15,7 +15,7 @@ export async function load() {
 export const actions = {
 	create: async ({ cookies, request }) => {
 		const data = await request.formData();
-		let url = new URL('http://localhost:8000/pokemones/');
+		let url = new URL('https://tp2-backend-z9h1.onrender.com/pokemones/');
 		const response = await fetch(url, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },

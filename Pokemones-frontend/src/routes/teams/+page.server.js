@@ -1,5 +1,5 @@
 export async function load() {
-	let urlTeams = new URL('http://localhost:8000/teams/');
+	let urlTeams = new URL('https://tp2-backend-z9h1.onrender.com/teams/');
 	const responseTeams = await fetch(urlTeams);
 	if (!responseTeams.ok) {
 		throw new Error(`Response status: ${responseTeams.status}`);
@@ -7,7 +7,7 @@ export async function load() {
 
 	let equipos = await responseTeams.json();
 
-	let urlPokemones = new URL('http://localhost:8000/pokemones/');
+	let urlPokemones = new URL('https://tp2-backend-z9h1.onrender.com/pokemones/');
 	const responsePokemones = await fetch(urlPokemones);
 	if (!responsePokemones.ok) {
 		throw new Error(`Response status: ${responsePokemones.status}`);
@@ -15,7 +15,7 @@ export async function load() {
 
 	let pokemones = await responsePokemones.json();
 
-	let urlMovimientos = new URL('http://localhost:8000/movimientos/');
+	let urlMovimientos = new URL('https://tp2-backend-z9h1.onrender.com/movimientos/');
 	const responseMovimientos = await fetch(urlMovimientos);
 	if (!responseMovimientos.ok) {
 		throw new Error(`Response status: ${responseMovimientos.status}`);
@@ -23,7 +23,7 @@ export async function load() {
 
 	let movimientos = await responseMovimientos.json();
 
-	let urlNaturalezas = new URL('http://localhost:8000/naturalezas/');
+	let urlNaturalezas = new URL('https://tp2-backend-z9h1.onrender.com/naturalezas/');
 	const responseNaturalezas = await fetch(urlNaturalezas);
 	if (!responseNaturalezas.ok) {
 		throw new Error(`Response status: ${responseNaturalezas.status}`);
@@ -58,7 +58,7 @@ export const actions = {
 			return
 		}
 
-		let url = new URL('http://localhost:8000/teams/');
+		let url = new URL('https://tp2-backend-z9h1.onrender.com/teams/');
 		const response = await fetch(url, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },

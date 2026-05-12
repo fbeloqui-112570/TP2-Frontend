@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {
-	let pokemonUrl = new URL(`http://localhost:8000/pokemones/${params.id}`);
+	let pokemonUrl = new URL(`https://tp2-backend-z9h1.onrender.com/pokemones/${params.id}`);
 	const pokemonResp = await fetch(pokemonUrl);
 	if (!pokemonResp.ok) {
 		error(pokemonResp.status);
